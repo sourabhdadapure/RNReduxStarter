@@ -3,13 +3,31 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "install": "cd android && gradlew clean && cd ..; npm run configure-ios",
+    "configure-ios": "run-s install-third-party move-third-party fix-glog",
+    "install-third-party": "./node_modules/react-native/scripts/ios-install-third-party.sh",
+    "move-third-party": "mv -f ./third-party ./node_modules/react-native",
+    "fix-glog": "cd ./node_modules/react-native/third-party/glog-* && ../../scripts/ios-configure-glog.sh && cd ../../../..",
+    "start-ios": "run-p load run-ios",
+    "start-android": "react-native run-android",
+    "start": "react-native start",
+    "run-android": "react-native run-android",
+    "start-iPad": "react-native run-ios --simulator \"iPad Pro (9.7-inch)\"",
+    "run-ios": "react-native run-ios --simulator \"iPhone XR\"",
+    "build-android": "run-p load build-apk",
+    "build-apk": "cd android && gradlew --console plain assembleRelease && cd ..",
+    "build-ipa": "react-native run-ios --configuration=release",
+    "load": "node programs/config",
+    "debug": "open \"rndebugger://set-debugger-loc?host=localhost&port=8081\"",
     "test": "jest",
-    "start-android": "react-native run-android"
+    "test:watch": "npm run test -- --watch"
   },
   "dependencies": {
     "react": "16.6.1",
-    "react-native": "0.57.7"
+    "react-native": "0.57.7",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
