@@ -13,7 +13,7 @@
     "start": "react-native start",
     "run-android": "react-native run-android",
     "start-iPad": "react-native run-ios --simulator \"iPad Pro (9.7-inch)\"",
-    "run-ios": "react-native run-ios --simulator \"iPhone XR\"",
+    "run-ios": "react-native run-ios --simulator \"iPhone X\"",
     "build-android": "run-p load build-apk",
     "build-apk": "cd android && gradlew --console plain assembleRelease && cd ..",
     "build-ipa": "react-native run-ios --configuration=release",
