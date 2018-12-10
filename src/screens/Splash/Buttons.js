@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from 'react-native-elements'
+import { Button } from '../../components'
 
-const Wrapper = styled.View``
+const Wrapper = styled.View`
+  bottom: 100;
+`
 
-const StyledButton = styled(Button)``
-
-const Buttons = () => (
+const Buttons = ({ navigateTo }) => (
   <Wrapper>
-    <StyledButton title="Log In" />
-    <StyledButton title="Sign Up" />
+    <Button title="Log In" onPress={() => navigateTo('LogIn')} />
+    <Button title="Sign Up" onPress={() => navigateTo('SignUp')} />
   </Wrapper>
 )
 
