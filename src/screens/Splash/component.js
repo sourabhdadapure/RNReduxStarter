@@ -1,18 +1,15 @@
 import React from 'react'
-import { View } from 'react-native'
-import { Button, Text } from 'react-native-elements'
+import styled from 'styled-components'
+import Buttons from './Buttons'
 
-const SplashComponent = () => (
-  <View
-    style={{
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
-  >
-    <Text> Welcome!!! </Text>
-    <Button title="Queue" />
-  </View>
+const Wrapper = styled.View`
+  flex: 1;
+`
+
+const Splash = () => (
+  <Wrapper>
+    <Buttons />
+  </Wrapper>
 )
 
-export default SplashComponent
+export default Splash
