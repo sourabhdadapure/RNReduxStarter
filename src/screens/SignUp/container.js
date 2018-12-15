@@ -1,18 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import SignUp from './component'
 
 const Wrapper = styled.View`
   flex: 1;
 `
 
-const Text = styled.Text`
-  color: red;
-`
-
-const SignUp = () => (
+const SignUpContainer = () => (
   <Wrapper>
-    <Text>Sign Up</Text>
+    <SignUp />
   </Wrapper>
 )
 
-export default SignUp
+export default SignUpContainer
