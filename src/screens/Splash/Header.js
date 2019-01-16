@@ -7,6 +7,6 @@ const HeaderText = styled.Text`
   color: blue;
 `
 
-const Header = () => <HeaderText>Welcome!!!</HeaderText>
+const Header = () => <HeaderText />
 
 export default Header

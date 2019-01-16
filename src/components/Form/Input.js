@@ -13,12 +13,13 @@ export default class RenderInput extends React.Component {
   }
 
   render() {
-    const { label, iconSource } = this.props
+    const { label, iconSource, keyboardType } = this.props
     return (
       <Wrapper>
         <Item floatingLabel>
           <Label>{label}</Label>
           <Input
+            keyboardType={keyboardType}
             style={{
               marginLeft: -4
             }}
